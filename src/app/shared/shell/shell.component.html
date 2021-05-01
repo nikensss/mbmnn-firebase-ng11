@@ -9,10 +9,22 @@
     #drawer
   >
     <mat-nav-list class="nav-list">
-      <a (click)="isHandset ? drawer.toggle() : ''" class="nav-item" mat-list-item routerLink="">
+      <a
+        (click)="isHandset ? drawer.toggle() : ''"
+        class="nav-item"
+        mat-list-item
+        routerLink=""
+        fragment="home"
+      >
         Home
       </a>
-      <a (click)="isHandset ? drawer.toggle() : ''" class="nav-item" mat-list-item routerLink="">
+      <a
+        (click)="isHandset ? drawer.toggle() : ''"
+        class="nav-item"
+        mat-list-item
+        routerLink=""
+        fragment="projects"
+      >
         Projects
       </a>
       <a
