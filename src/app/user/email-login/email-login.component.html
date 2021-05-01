@@ -1,0 +1,50 @@
+<mat-card>
+  <div *ngIf="isLogin">
+    <h3>Sign In</h3>
+    <button mat-button *ngIf="isLogin && !isPasswordReset" (click)="changeType('reset')">
+      Forgot password?
+    </button>
+  </div>
+
+  <div *ngIf="isPasswordReset">
+    <h3>Reset Password</h3>
+    <button size="small" mat-button (click)="changeType('login')">Already a user?</button>
+  </div>
+
+  <form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field [color]="email?.valid && 'accent'">
+      <input type="email" placeholder="Email" autocomplete="off" matInput formControlName="email" />
+      <mat-error *ngIf="email?.invalid && email?.dirty">
+        You must enter a valid email address
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field [color]="password?.valid && 'accent'" *ngIf="!isPasswordReset">
+      <input
+        type="password"
+        matInput
+        formControlName="password"
+        placeholder="Password"
+        autocomplete="off"
+      />
+
+      <mat-error *ngIf="password?.invalid && password?.dirty">
+        Password must be at least 6 characters long
+      </mat-error>
+    </mat-form-field>
+
+    <button *ngIf="isPasswordReset" mat-stroked-button type="submit" [disabled]="loading">
+      Send Reset Email
+    </button>
+
+    <button
+      *ngIf="!isPasswordReset"
+      mat-raised-button
+      color="accent"
+      type="submit"
+      [disabled]="form.invalid || loading"
+    >
+      Login
+    </button>
+  </form>
+</mat-card>
