@@ -1,12 +1,6 @@
-@import "~@angular/material/theming";
-
-@include mat-core();
-
-$primary: mat-palette($mat-grey);
-
 @mixin nav-item-before {
-  font-size: 0.8em;
-  color: mat-color($primary, 600);
+  font-size: 0.85em;
+  color: hsla(0, 0%, 50%, 0.5);
   padding-left: 16px;
   position: absolute;
   top: -1rem;
@@ -24,7 +18,7 @@ $primary: mat-palette($mat-grey);
       height: 100%;
       background-image: url("../../../assets/menuBackground.png");
       background-size: cover;
-      background-color: mat-color($primary, 300);
+      background-color: rgb(212, 212, 212);
       display: flex;
       flex-direction: column;
 
