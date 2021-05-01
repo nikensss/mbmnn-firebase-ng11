@@ -48,11 +48,13 @@ export class EmailLoginComponent implements OnInit {
     try {
       const [email, password] = [this.email?.value, this.password?.value];
       if (this.isLogin) {
-        this.auth.signInWithEmailAndPassword(email, password);
+        await this.auth.signInWithEmailAndPassword(email, password);
       }
+
       if (this.isPasswordReset) {
-        this.auth.sendPasswordResetEmail(email);
+        await this.auth.sendPasswordResetEmail(email);
         this.serverMessage = 'Please, check you email.';
+        this.type = 'login';
       }
     } catch (ex) {
       this.serverMessage = ex.message;

@@ -15,12 +15,18 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./user/user.module').then((m) => m.UserModule)
+  },
+  {
+    path: '**',
+    redirectTo: '/'
   }
 ];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
+      useHash: true,
+      enableTracing: false,
       scrollPositionRestoration: 'enabled',
       anchorScrolling: 'enabled'
     })

@@ -1,13 +1,50 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav mode="side" opened class="sidenav">
+<mat-sidenav-container class="sidenav-container" [hasBackdrop]="isHandset$ | async">
+  <mat-sidenav
+    mode="side"
+    opened
+    class="sidenav"
+    fixedInViewport
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)"
+    #drawer
+  >
     <mat-nav-list class="nav-list">
-      <a class="nav-item" mat-list-item routerLink="" fragment="home">Home</a>
-      <a class="nav-item" mat-list-item routerLink="" fragment="projects">Projects</a>
-      <a class="nav-item" mat-list-item routerLink="about">About</a>
-      <a class="nav-item" mat-list-item routerLink="login">MBMNN-DSGN</a>
+      <a (click)="isHandset ? drawer.toggle() : ''" class="nav-item" mat-list-item routerLink="">
+        Home
+      </a>
+      <a (click)="isHandset ? drawer.toggle() : ''" class="nav-item" mat-list-item routerLink="">
+        Projects
+      </a>
+      <a
+        (click)="isHandset ? drawer.toggle() : ''"
+        class="nav-item"
+        mat-list-item
+        routerLink="about"
+      >
+        About
+      </a>
+      <a
+        (click)="isHandset ? drawer.toggle() : ''"
+        class="nav-item"
+        mat-list-item
+        routerLink="login"
+      >
+        MBMNN-DSGN
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
+    <button
+      mat-mini-fab
+      color="primary"
+      class="menu-button"
+      type="button"
+      mat-icon-button
+      (click)="drawer.toggle()"
+      *ngIf="isHandset$ | async"
+    >
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
     <ng-content></ng-content>
   </mat-sidenav-content>
 </mat-sidenav-container>

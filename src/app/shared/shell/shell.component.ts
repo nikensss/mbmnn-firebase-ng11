@@ -13,8 +13,13 @@ export class ShellComponent implements OnInit {
     map((result) => result.matches),
     shareReplay()
   );
+  isHandset: boolean = false;
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.isHandset$.subscribe((isHandset) => {
+      this.isHandset = isHandset;
+    });
+  }
 }
