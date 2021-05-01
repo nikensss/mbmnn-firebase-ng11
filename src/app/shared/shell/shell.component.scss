@@ -1,0 +1,50 @@
+@mixin nav-item-before {
+  font-size: 0.9em;
+  color: rgb(116, 116, 116);
+  padding-left: 16px;
+  position: absolute;
+  top: -1rem;
+}
+
+.sidenav-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  .sidenav {
+    .nav-list {
+      height: 100vh;
+      background-image: url("../../../assets/menuBackground.png");
+      background-size: contain;
+      background-color: hsla(0, 0%, 83%, 0.5);
+      display: flex;
+      flex-direction: column;
+
+      .nav-item {
+        font-size: 1.3rem;
+        margin-top: 7rem;
+
+        &:first-child::before {
+          content: "from";
+          @include nav-item-before;
+        }
+
+        &:not(:first-child):not(:last-child)::before {
+          content: "to";
+          @include nav-item-before;
+        }
+
+        &:last-child {
+          margin-top: auto;
+          padding-bottom: 1.333rem;
+          &::before {
+            content: "by";
+            @include nav-item-before;
+          }
+        }
+      }
+    }
+  }
+}
