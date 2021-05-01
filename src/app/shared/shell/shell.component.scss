@@ -15,12 +15,14 @@
 
   .sidenav {
     .nav-list {
-      height: 100vh;
+      height: 100%;
       background-image: url("../../../assets/menuBackground.png");
       background-size: contain;
       background-color: hsla(0, 0%, 83%, 0.5);
       display: flex;
       flex-direction: column;
+
+      padding: 0;
 
       .nav-item {
         font-size: 1.3rem;
