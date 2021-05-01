@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "mbmnn-dev": {
+      "hosting": {
+        "mbmnn-firebase": [
+          "mbmnn-dev"
+        ]
+      }
+    }
+  }
+}
