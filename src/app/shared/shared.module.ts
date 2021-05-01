@@ -13,6 +13,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { ShellComponent } from './shell/shell.component';
+import { FooterComponent } from './footer/footer.component';
 
 const components = [ShellComponent];
 
@@ -34,7 +35,7 @@ const modules = [
 ];
 
 @NgModule({
-  declarations: [...components],
+  declarations: [...components, FooterComponent],
   imports: [...modules],
   exports: [...components, ...modules]
 })

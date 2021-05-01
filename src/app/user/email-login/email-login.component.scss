@@ -1,5 +1,5 @@
 mat-card {
-  max-width: 100%;
+  width: clamp(300px, 60%, 600px);
   margin: 0 auto;
 }
 

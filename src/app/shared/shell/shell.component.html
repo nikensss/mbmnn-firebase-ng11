@@ -57,6 +57,10 @@
     >
       <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
     </button>
-    <ng-content></ng-content>
+
+    <section class="body-wrapper">
+      <ng-content></ng-content>
+      <app-footer></app-footer>
+    </section>
   </mat-sidenav-content>
 </mat-sidenav-container>
