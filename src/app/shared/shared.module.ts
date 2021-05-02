@@ -12,10 +12,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
-import { ShellComponent } from './shell/shell.component';
 import { FooterComponent } from './footer/footer.component';
+import { ShellComponent } from './shell/shell.component';
 
-const components = [ShellComponent];
+const components = [ShellComponent, FooterComponent];
 
 const modules = [
   CommonModule,
@@ -31,12 +31,12 @@ const modules = [
   MatCardModule,
   MatFormFieldModule,
   MatInputModule,
-  MatSnackBarModule
+  MatSnackBarModule,
 ];
 
 @NgModule({
-  declarations: [...components, FooterComponent],
+  declarations: [...components],
   imports: [...modules],
-  exports: [...components, ...modules]
+  exports: [...components, ...modules],
 })
 export class SharedModule {}

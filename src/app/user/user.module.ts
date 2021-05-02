@@ -14,7 +14,7 @@ import { UserRoutingModule } from './user-routing.module';
     UserRoutingModule,
     SharedModule,
     ReactiveFormsModule,
-    AngularFireAuthModule
-  ]
+    AngularFireAuthModule,
+  ],
 })
 export class UserModule {}

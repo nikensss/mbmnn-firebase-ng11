@@ -11,8 +11,8 @@ export const environment = {
     storageBucket: 'mbmnn-dev.appspot.com',
     messagingSenderId: '220742294867',
     appId: '1:220742294867:web:21ed8224232916abc795a6',
-    measurementId: 'G-DE44XNR7TC'
-  }
+    measurementId: 'G-DE44XNR7TC',
+  },
 };
 
 /*

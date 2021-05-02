@@ -6,7 +6,7 @@ type FormType = 'login' | 'reset';
 @Component({
   selector: 'app-email-login',
   templateUrl: './email-login.component.html',
-  styleUrls: ['./email-login.component.scss']
+  styleUrls: ['./email-login.component.scss'],
 })
 export class EmailLoginComponent implements OnInit {
   form: FormGroup | undefined;
@@ -19,7 +19,7 @@ export class EmailLoginComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
